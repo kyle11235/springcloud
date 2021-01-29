@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: product
+
+name: product
+server:
+  port: 9003
+
+eureka:
+  appname: product
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # health, info, metrics
+  server:
+    port: 9013 # http://localhost:9013/actuator
+    ssl:
+      enabled: false
+    base-path: /
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,36 @@
+
+server:
+  port: 9001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+api:
+  apiGetOrders: http://order/orders
+  apiGetProducts: http://product/products
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # health, info, metrics
+  server:
+    port: 9011 # http://localhost:9011/actuator
+    ssl:
+      enabled: false
+    base-path: /
+  endpoint:
+    health:
+      show-details: always
+
+# config client
+spring:
+  application:
+    name: foo # foo -> config server -> github.com...foo.properties
+
+foo: foo from local
+
+
+

@@ -1,0 +1,14 @@
+
+name: config
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
+          # http://localhost:8888/foo-dev.yml -> https://github.com/spring-cloud-samples/config-repo/foo-dev.yml
